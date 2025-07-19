@@ -10,7 +10,7 @@ export default function Hero() {
         Decentralized rails for compliant privacy.
       </h2>
       <p className="text-steel text-lg max-w-xl">
-        Rafala is a multichain USDC protocol powered by Circle CCTP V2, zero-knowledge identity and quantum-safe cryptography.
+        Rafala powers private, cross-chain USDC transfers using Circle CCTP V2, zero-knowledge identity and quantum-safe cryptography—all with an open door for regulatory compliance.
       </p>
       <div className="mt-10">
         <a
