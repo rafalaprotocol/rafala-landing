@@ -12,6 +12,14 @@ export default function Why() {
     { title: 'Fully decentralized', desc: 'Wallet auth, IPFS storage—no servers' },
     { title: 'Easy to integrate', desc: 'Simple SDKs and drop-in widgets' },
     { title: 'Privacy + Trust', desc: 'Built ethically for real use cases' },
+
+    { title: 'Multichain USDC', desc: 'Accept payments on any chain CCTP supports' },
+    { title: 'zkProofs', desc: 'Hide sender, amount, or logic using verifiable math' },
+    { title: 'Quantum Resistance', desc: 'Prepare now for post-quantum security needs' },
+    { title: 'Optional Compliance', desc: 'View key or MPC for emergency auditability' },
+    { title: 'Fully Decentralized', desc: 'No backend, just code & cryptography' },
+    { title: 'Easy to Integrate', desc: 'Modular SDKs, future plugins' },
+
   ];
 
   return (
