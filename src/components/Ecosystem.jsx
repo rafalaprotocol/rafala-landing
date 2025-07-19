@@ -8,17 +8,17 @@ export default function Ecosystem() {
     {
       id: 'pay',
       title: 'Pay',
-      desc: 'Instant cross-chain USDC payments powered by Circle CCTP.'
+      desc: 'Accept USDC across chains with privacy. Merchants publish prefs to IPFS and customers pay via CCTP Fast Transfer.'
     },
     {
       id: 'identity',
       title: 'Identity',
-      desc: 'Zero-knowledge credentials for seamless onboarding.'
+      desc: 'Self-sovereign identity hub powered by Semaphore, Lit Protocol or Sismo.'
     },
     {
       id: 'app',
       title: 'App',
-      desc: 'Unified interface to manage assets across all chains.'
+      desc: 'DeFi interface with staking, DAO modules and interchain analytics.'
     },
     {
       id: 'token',

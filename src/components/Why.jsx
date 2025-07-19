@@ -5,12 +5,21 @@ export default function Why() {
   const ref = useRef(null);
   useSectionObserver(ref);
   const features = [
+    { title: 'Accept USDC anywhere', desc: 'One system for cross-chain USDC payments' },
+    { title: 'Protect user privacy', desc: 'zk-proofs hide sensitive data' },
+    { title: 'Future-ready', desc: 'Quantum-resilient architecture' },
+    { title: 'Compliant if needed', desc: 'Optional regulator access paths' },
+    { title: 'Fully decentralized', desc: 'Wallet auth, IPFS storage—no servers' },
+    { title: 'Easy to integrate', desc: 'Simple SDKs and drop-in widgets' },
+    { title: 'Privacy + Trust', desc: 'Built ethically for real use cases' },
+
     { title: 'Multichain USDC', desc: 'Accept payments on any chain CCTP supports' },
     { title: 'zkProofs', desc: 'Hide sender, amount, or logic using verifiable math' },
     { title: 'Quantum Resistance', desc: 'Prepare now for post-quantum security needs' },
     { title: 'Optional Compliance', desc: 'View key or MPC for emergency auditability' },
     { title: 'Fully Decentralized', desc: 'No backend, just code & cryptography' },
     { title: 'Easy to Integrate', desc: 'Modular SDKs, future plugins' },
+
   ];
 
   return (
@@ -24,6 +33,9 @@ export default function Why() {
           </div>
         ))}
       </div>
+      <p className="text-steel text-sm mt-8">
+        Merchants gain cross-chain USDC payments with privacy, developers build composable tools, auditors can verify when required, and users stay in control of their data.
+      </p>
     </section>
   );
 }
