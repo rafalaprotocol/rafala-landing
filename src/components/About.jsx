@@ -1,6 +1,11 @@
+import { useRef } from 'react';
+import useSectionObserver from '../hooks/useSectionObserver';
+
 export default function About() {
+  const ref = useRef(null);
+  useSectionObserver(ref);
   return (
-    <section id="about" className="py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <section ref={ref} id="about" className="section-transition py-16 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
       <div>
         <h3 className="text-3xl font-display mb-4">What is Rafala?</h3>
         <p className="text-steel">
