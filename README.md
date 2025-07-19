@@ -1,6 +1,6 @@
 # 🌀 Rafala.xyz — Landing Page
 
-**Rafala** is a fully decentralized USDC protocol built on multichain infrastructure, zero-knowledge identity, and quantum-safe security.  
+**Rafala** is a fully decentralized protocol built on multichain infrastructure, zero-knowledge identity, and quantum-safe security.  
 This repository contains the official landing page (`rafala.xyz`) built with React, Vite, and TailwindCSS.
 
 ---
