@@ -1,6 +1,9 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
+import Why from './components/Why';
 import Ecosystem from './components/Ecosystem';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 function App() {
@@ -9,7 +12,10 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <About />
+        <Why />
         <Ecosystem />
+        <CTA />
       </main>
       <Footer />
     </div>
