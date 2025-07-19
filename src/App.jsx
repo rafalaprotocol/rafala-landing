@@ -5,14 +5,10 @@ import Why from './components/Why';
 import Ecosystem from './components/Ecosystem';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
-import VortexBackground from './components/VortexBackground';
-import FloatingNodes from './components/FloatingNodes';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col justify-between relative overflow-hidden">
-      <VortexBackground />
-      <FloatingNodes />
       <Header />
       <main className="flex-grow">
         <Hero />
