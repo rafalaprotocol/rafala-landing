@@ -1,8 +1,13 @@
+import { useRef } from 'react';
+import useSectionObserver from '../hooks/useSectionObserver';
+
 export default function Footer() {
   const year = new Date().getFullYear();
+  const ref = useRef(null);
+  useSectionObserver(ref);
 
   return (
-    <footer className="border-t border-graphite py-8 px-6 text-center text-sm">
+    <footer ref={ref} className="section-transition border-t border-graphite py-8 px-6 text-center text-sm">
       <div className="space-x-6 mb-4">
         <a href="https://github.com/rafalaprotocol" className="hover:text-rust">GitHub</a>
         <a href="mailto:contact@rafala.xyz" className="hover:text-rust">Contact</a>
