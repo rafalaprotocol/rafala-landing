@@ -1,4 +1,9 @@
+import { useRef } from 'react';
+import useSectionObserver from '../hooks/useSectionObserver';
+
 export default function Ecosystem() {
+  const ref = useRef(null);
+  useSectionObserver(ref);
   const features = [
     {
       id: 'pay',
@@ -23,7 +28,7 @@ export default function Ecosystem() {
   ];
 
   return (
-    <section id="ecosystem" className="py-20 px-6 max-w-6xl mx-auto">
+    <section ref={ref} id="ecosystem" className="section-transition py-20 px-6 max-w-6xl mx-auto">
       <h3 className="text-3xl font-display text-center mb-12">Ecosystem</h3>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {features.map((f) => (
