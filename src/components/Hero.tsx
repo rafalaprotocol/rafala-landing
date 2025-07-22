@@ -10,10 +10,7 @@ export default function Hero() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <section className="relative h-[calc(100vh-140px)] w-full bg-noir flex items-center justify-center">
-            {/* Container pătrat fix */}
-
-            {/* Text centrat */}
+        <section className="relative h-[calc(100vh-300px)] w-full bg-noir flex items-center justify-center">
             <div className="absolute inset-0 z-10 flex items-center justify-center">
                 <h3 className="text-glacier text-2xl md:text-3xl font-display leading-tight text-center">
                     Work in progress{dots}
