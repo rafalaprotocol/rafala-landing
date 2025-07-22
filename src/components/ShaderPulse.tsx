@@ -1,9 +1,9 @@
 import * as THREE from "three";
-import { extend, useFrame } from "@react-three/fiber";
+import { extend, useFrame, ReactThreeFiber } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import { useRef } from "react";
 
-// Define the shader material
+// Define custom shader material
 const PulseMaterial = shaderMaterial(
   {
     uTime: 0,
@@ -36,21 +36,24 @@ const PulseMaterial = shaderMaterial(
   `
 );
 
-// Extend pentru a putea folosi în JSX
+// Register PulseMaterial in JSX
 extend({ PulseMaterial });
 
-// 💡 TypeScript: define JSX type pentru pulseMaterial
+// Declare type for JSX <pulseMaterial />
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      pulseMaterial: any; // sau mai strict: ReactThreeFiber.Node<PulseMaterialType, typeof PulseMaterial>
+      pulseMaterial: ReactThreeFiber.Object3DNode<
+        ReturnType<typeof PulseMaterial>,
+        typeof PulseMaterial
+      >;
     }
   }
 }
 
 export default function ShaderPulse() {
   const materialRef = useRef<any>();
-  const meshRef = useRef<any>();
+  const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
