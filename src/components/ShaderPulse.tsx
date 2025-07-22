@@ -3,7 +3,7 @@ import { extend, useFrame } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import { useRef } from "react";
 
-// Material cu efect de curbura subtilă
+// Define the shader material
 const PulseMaterial = shaderMaterial(
   {
     uTime: 0,
@@ -23,34 +23,39 @@ const PulseMaterial = shaderMaterial(
 
     void main() {
       float dist = length(vUv);
-
-      // Grosimea inelului pulsează spre interior
       float thickness = 0.05 + 0.01 * sin(uTime * 2.0);
-
       float outer = 0.48;
       float inner = outer - thickness;
 
       float ring = smoothstep(inner, inner + 0.002, dist) - smoothstep(outer - 0.002, outer, dist);
-
-      // Simulare curbura: fade spre interior (efect vizual 3D)
-      float curve = smoothstep(inner, outer, dist); // 0 la inner, 1 la outer
-      float alpha = ring * (0.6 + 0.4 * (1.0 - curve)); // fade interior
+      float curve = smoothstep(inner, outer, dist);
+      float alpha = ring * (0.6 + 0.4 * (1.0 - curve));
 
       gl_FragColor = vec4(uColor, alpha);
     }
   `
 );
 
+// Extend pentru a putea folosi în JSX
 extend({ PulseMaterial });
 
+// 💡 TypeScript: define JSX type pentru pulseMaterial
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      pulseMaterial: any; // sau mai strict: ReactThreeFiber.Node<PulseMaterialType, typeof PulseMaterial>
+    }
+  }
+}
+
 export default function ShaderPulse() {
-  const ref = useRef<any>();
+  const materialRef = useRef<any>();
   const meshRef = useRef<any>();
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
-    if (ref.current) {
-      ref.current.uTime = t;
+    if (materialRef.current) {
+      materialRef.current.uTime = t;
     }
     if (meshRef.current) {
       meshRef.current.scale.set(0.9, 0.9, 1);
@@ -60,7 +65,7 @@ export default function ShaderPulse() {
   return (
     <mesh ref={meshRef} position={[0, 0, 0]}>
       <planeGeometry args={[4, 4]} />
-      <pulseMaterial ref={ref} transparent />
+      <pulseMaterial ref={materialRef} transparent />
     </mesh>
   );
 }
