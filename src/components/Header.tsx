@@ -1,6 +1,6 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useDisconnect } from 'wagmi';
-import { useState, useEffect } from 'react';
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
+// import { useDisconnect } from 'wagmi';
+// import { useState, useEffect } from 'react';
 
 
 export default function Header() {
