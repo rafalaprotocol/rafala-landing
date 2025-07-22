@@ -23,14 +23,9 @@ export default {
           '60%': { content: '"..."' },
           '80%, 100%': { content: '""' },
         },
-        shrapnel: {
-          '0%': { transform: 'translate(0, 0) scale(var(--scale, 1))', opacity: '1' },
-          '100%': { transform: 'translate(var(--x), var(--y)) scale(var(--scale, 1))', opacity: '0' },
-        },
       },
       animation: {
         dots: 'dots 1.2s steps(4, end) infinite',
-        shrapnel: 'shrapnel 2.5s ease-out infinite',
       },
     },
     plugins: [],
